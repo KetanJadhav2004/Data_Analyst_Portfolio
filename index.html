@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ketan Jadhav — Data Analytics portfolio. Projects in Power BI, SQL, Python, and data-driven reporting." />
+  <title>Ketan Jadhav | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f8f9ff;
+      --white: #ffffff;
+      --blue: #6c8eff;
+      --blue-light: #eef1ff;
+      --purple: #a78bfa;
+      --purple-light: #f3f0ff;
+      --green: #34d399;
+      --green-light: #ecfdf5;
+      --pink: #f472b6;
+      --pink-light: #fdf2f8;
+      --text: #2d3748;
+      --muted: #718096;
+      --border: #e8ecf4;
+      --shadow: 0 4px 24px rgba(108,142,255,0.10);
+      --shadow-hover: 0 8px 40px rgba(108,142,255,0.18);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 16px rgba(108,142,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .nav-logo span { color: var(--purple); }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 60px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Soft blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .blob-1 { width: 400px; height: 400px; background: #c7d2fe; top: -100px; left: -100px; }
+    .blob-2 { width: 350px; height: 350px; background: #ddd6fe; bottom: -80px; right: -80px; }
+    .blob-3 { width: 250px; height: 250px; background: #bfdbfe; top: 40%; left: 60%; }
+
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+
+    .hero-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      display: block;
+      animation: wave 2s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(15deg); }
+      75% { transform: rotate(-10deg); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    h1 .highlight {
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-main {
+      padding: 13px 30px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 20px rgba(108,142,255,0.35);
+      transition: all 0.3s;
+    }
+    .btn-main:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(108,142,255,0.45); }
+
+    .btn-ghost {
+      padding: 13px 30px;
+      background: white;
+      color: var(--blue);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 2px solid var(--border);
+      transition: all 0.3s;
+    }
+    .btn-ghost:hover { border-color: var(--blue); transform: translateY(-3px); }
+
+    /* SECTIONS */
+    section { padding: 90px 60px; }
+
+    .section-label {
+      display: inline-block;
+      padding: 5px 16px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 50px;
+      color: var(--text);
+    }
+
+    /* ABOUT */
+    #about { background: white; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+
+    .info-cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .info-card:hover { box-shadow: var(--shadow); transform: translateX(6px); }
+
+    .info-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .icon-blue { background: var(--blue-light); }
+    .icon-purple { background: var(--purple-light); }
+    .icon-green { background: var(--green-light); }
+    .icon-pink { background: var(--pink-light); }
+
+    .info-label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+    .info-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+
+    .skills-wrapper { max-width: 1100px; margin: 0 auto; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .skill-box:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+
+    .skill-box-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .skill-box-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+
+    .skill-box-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .pill {
+      padding: 5px 13px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .pill-blue { background: var(--blue-light); color: var(--blue); }
+    .pill-purple { background: var(--purple-light); color: #7c3aed; }
+    .pill-green { background: var(--green-light); color: #059669; }
+    .pill-pink { background: var(--pink-light); color: #db2777; }
+
+    /* PROJECTS */
+    #projects { background: white; }
+
+    .projects-wrapper { max-width: 1100px; margin: 0 auto; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .project-emoji { font-size: 2.2rem; }
+
+    .project-badge {
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .badge-blue { background: var(--blue-light); color: var(--blue); }
+    .badge-purple { background: var(--purple-light); color: #7c3aed; }
+    .badge-green { background: var(--green-light); color: #059669; }
+
+    .project-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+
+    .tag {
+      padding: 4px 11px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 10px; }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg); }
+
+    .exp-wrapper { max-width: 800px; margin: 0 auto; }
+
+    .exp-card {
+      background: white;
+      border-radius: 24px;
+      padding: 36px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .exp-role {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .exp-company {
+      color: var(--blue);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .exp-date {
+      padding: 6px 16px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .exp-list { list-style: none; }
+    .exp-list li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .exp-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 0.6rem;
+      top: 12px;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: white;
+      text-align: center;
+    }
+
+    .contact-wrapper { max-width: 600px; margin: 0 auto; }
+
+    .contact-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .contact-card:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-email-big {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 24px 60px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content > * {
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.35s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.4s; }
+
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 18px; }
+      #hero { padding: 100px 24px 60px; }
+      section { padding: 60px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      footer { flex-direction: column; gap: 6px; padding: 18px 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ketan<span>.</span>dev</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-content">
+    <span class="hero-emoji">👋</span>
+    <div class="hero-badge">Open to Internship Opportunities</div>
+    <h1>Hi, I'm <span class="highlight">Ketan Jadhav</span></h1>
+    <p class="hero-sub">
+      Data Analytics Enthusiast<br/>
+      Final-year B.Tech student from Nashik, Maharashtra
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-main">View My Work 🚀</a>
+      <a href="#contact" class="btn-ghost">Say Hello 👋</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">A little about myself 😊</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hey! I'm <strong>Ketan Sudhakar Jadhav</strong>, a final-year B.Tech student in
+          <strong>Computer Science & Design Engineering</strong> at MET Institute of Engineering, Nashik.
+          I'm graduating in June 2026 and actively looking for opportunities!
+        </p>
+        <p>
+          I recently completed a <strong>5-month Data Analytics internship at ExcelR Solutions, Pune</strong>
+          where I worked with real datasets, wrote SQL queries, and learned the analytics workflow hands-on.
+        </p>
+        <p>
+          I enjoy building data-driven solutions and analytics projects. I'm a quick learner and always excited to pick up new skills! 🎯
+        </p>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon icon-blue">🎓</div>
+          <div>
+            <div class="info-label">MET Institute of Engineering</div>
+            <div class="info-sub">B.Tech CS & Design · 2022 – 2026</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon icon-purple">📊</div>
+          <div>
+            <div class="info-label">Data Analytics Intern</div>
+            <div class="info-sub">ExcelR Solutions, Pune · 5 Months</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon icon-green">💻</div>
+          <div>
+            <div class="info-label">Backend Developer</div>
+            <div class="info-sub">Java · MySQL · JDBC · Projects</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon icon-pink">📍</div>
+          <div>
+            <div class="info-label">Nashik, Maharashtra</div>
+            <div class="info-sub">Open to Pan India opportunities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-wrapper">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">What I work with 🛠️</h2>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <div class="skill-box-header">
+          <div class="skill-box-icon icon-blue">📊</div>
+          <div class="skill-box-title">Data Analytics</div>
+        </div>
+        <div class="skill-pills">
+          <span class="pill pill-blue">Python</span>
+          <span class="pill pill-blue">SQL</span>
+          <span class="pill pill-blue">Excel</span>
+          <span class="pill pill-blue">EDA</span>
+          <span class="pill pill-blue">Data Cleaning</span>
+          <span class="pill pill-blue">Statistics</span>
+          <span class="pill pill-blue">Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-box-header">
+          <div class="skill-box-icon icon-purple">🗄️</div>
+          <div class="skill-box-title">Databases</div>
+        </div>
+        <div class="skill-pills">
+          <span class="pill pill-purple">MySQL</span>
+          <span class="pill pill-purple">PostgreSQL</span>
+          <span class="pill pill-purple">SQL Queries</span>
+          <span class="pill pill-purple">JDBC</span>
+          <span class="pill pill-purple">ETL</span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-box-header">
+          <div class="skill-box-icon icon-green">📈</div>
+          <div class="skill-box-title">Tools & Viz</div>
+        </div>
+        <div class="skill-pills">
+          <span class="pill pill-green">Power BI</span>
+          <span class="pill pill-green">Tableau</span>
+          <span class="pill pill-green">Power Query</span>
+          <span class="pill pill-green">DAX</span>
+          <span class="pill pill-green">Matplotlib</span>
+          <span class="pill pill-green">Seaborn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-wrapper">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I've built 🚀</h2>
+    <div class="projects-grid">
+
+        <div class="project-card">
+        <div class="project-top">
+          <span class="project-emoji">🌐</span>
+          <span class="project-badge badge-purple">Web Dev</span>
+        </div>
+        <div class="project-title">Responsive Portfolio Website</div>
+        <div class="project-desc">
+          Personal portfolio with modern CSS Grid, responsive layouts, semantic HTML
+          and REST API testing with Postman.
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Postman</span>
+        </div>
+        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <span class="project-emoji">📈</span>
+          <span class="project-badge badge-green">BI</span>
+        </div>
+        <div class="project-title">Power BI Dashboard</div>
+        <div class="project-desc">
+          Detailed business dashboard built in Power BI using Power Query for ETL,
+          DAX measures for KPI calculations, and interactive visuals for executive reporting.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">KPIs</span>
+        </div>
+        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub →
+        </a>
+        <a href="mailto:ketanjadhav29032004@gmail.com?subject=Request%20PBIX%20Dashboard&body=Hi%20Ketan,%0A%0AI%20would%20like%20to%20request%20the%20PBIX%20file%20for%20the%20Power%20BI%20Dashboard.%20Please%20share%20it.%0A%0AThanks," class="project-link">
+          Request PBIX
+        </a>
+        <div style="color: var(--muted); font-size: 0.82rem; font-weight: 600; margin-top: 12px;">
+          PBIX dashboard available on request — GitHub hosts supporting files only.
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <span class="project-emoji">📊</span>
+          <span class="project-badge badge-green">Analytics</span>
+        </div>
+        <div class="project-title">Data Analytics Projects (ExcelR)</div>
+        <div class="project-desc">
+          Hands-on analytics projects from my 5-month internship — data cleaning,
+          exploratory data analysis and SQL-based insights on real datasets.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+          <span class="tag">EDA</span>
+        </div>
+        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-wrapper">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Where I've worked 💼</h2>
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Data Analytics Intern</div>
+          <div class="exp-company">ExcelR Solutions · Pune, Maharashtra</div>
+        </div>
+        <div class="exp-date">Feb 2026 – Jun 2026</div>
+      </div>
+      <ul class="exp-list">
+        <li>Worked with real-world datasets to perform data cleaning and exploratory data analysis.</li>
+        <li>Wrote and optimized SQL queries for data extraction and transformation.</li>
+        <li>Used Python for data processing and generating analytical reports.</li>
+        <li>Gained hands-on experience in analytics workflows and data-driven decision making.</li>
+        <li>Collaborated with team on structured analytics projects with defined deliverables.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Let's connect! 🤝</h2>
+  <div class="contact-wrapper">
+    <p class="contact-desc">
+      I'm actively looking for <strong>Data Analyst</strong> internship opportunities. I'd love to hear from you — feel free to reach out! 😊
+    </p>
+    <div class="contact-cards">
+      <a href="mailto:ketanjadhav29032004@gmail.com" class="contact-card">
+        📧 Email Me
+      </a>
+      <a href="https://linkedin.com/in/ketanjadhav004" target="_blank" rel="noopener noreferrer" class="contact-card">
+        💼 LinkedIn
+      </a>
+      <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="contact-card">
+        🐙 GitHub
+      </a>
+    </div>
+    <a href="mailto:ketanjadhav29032004@gmail.com" class="contact-email-big">
+      ketanjadhav29032004@gmail.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Ketan Sudhakar Jadhav 💙</p>
+  <p>Built with HTML · CSS · JavaScript</p>
+</footer>
+
