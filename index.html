@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Ketan Jadhav — Data Analytics portfolio. Projects in Power BI, SQL, Python, and data-driven reporting." />
-  <title>Ketan Jadhav | Portfolio</title>
+  <title>Data Analytics | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -385,6 +385,52 @@
     }
     .project-link:hover { gap: 10px; }
 
+    /* CERTIFICATIONS */
+    #certifications { background: var(--bg); }
+
+    .cert-wrapper { max-width: 1000px; margin: 0 auto; }
+
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .cert-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    .cert-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .cert-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .cert-org {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cert-desc {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
     /* EXPERIENCE */
     #experience { background: var(--bg); }
 
@@ -543,6 +589,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -556,11 +603,11 @@
   <div class="blob blob-3"></div>
   <div class="hero-content">
     <span class="hero-emoji">👋</span>
-    <div class="hero-badge">Open to Internship Opportunities</div>
+    <div class="hero-badge">Open to Job Opportunities</div>
     <h1>Hi, I'm <span class="highlight">Ketan Jadhav</span></h1>
     <p class="hero-sub">
       Data Analytics Enthusiast<br/>
-      Final-year B.Tech student from Nashik, Maharashtra
+      Completed B.Tech degree from Nashik, Maharashtra
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn-main">View My Work 🚀</a>
@@ -578,11 +625,11 @@
       <div class="about-text">
         <p>
           Hey! I'm <strong>Ketan Sudhakar Jadhav</strong>, a final-year B.Tech student in
-          <strong>Computer Science & Design Engineering</strong> at MET Institute of Engineering, Nashik.
-          I'm graduating in June 2026 and actively looking for opportunities!
+          <strong>Computer Science & Design Engineering</strong> AT MET INSTITUTE OF ENGINEERING, NASHIK.
+          I completed my degree in August 2026 and I'm actively looking for opportunities!
         </p>
         <p>
-          I recently completed a <strong>5-month Data Analytics internship at ExcelR Solutions, Pune</strong>
+          I recently completed a <strong>6-month Data Analytics internship at ExcelR Solutions, Pune</strong>
           where I worked with real datasets, wrote SQL queries, and learned the analytics workflow hands-on.
         </p>
         <p>
@@ -601,15 +648,9 @@
           <div class="info-icon icon-purple">📊</div>
           <div>
             <div class="info-label">Data Analytics Intern</div>
-            <div class="info-sub">ExcelR Solutions, Pune · 5 Months</div>
+            <div class="info-sub">ExcelR Solutions, Pune · 6 Months</div>
           </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon icon-green">💻</div>
-          <div>
-            <div class="info-label">Backend Developer</div>
-            <div class="info-sub">Java · MySQL · JDBC · Projects</div>
-          </div>
+       
         </div>
         <div class="info-card">
           <div class="info-icon icon-pink">📍</div>
@@ -638,10 +679,10 @@
           <span class="pill pill-blue">Python</span>
           <span class="pill pill-blue">SQL</span>
           <span class="pill pill-blue">Excel</span>
-          <span class="pill pill-blue">EDA</span>
+          <span class="pill pill-blue">Tableau</span>
           <span class="pill pill-blue">Data Cleaning</span>
           <span class="pill pill-blue">Statistics</span>
-          <span class="pill pill-blue">Machine Learning</span>
+          <span class="pill pill-blue">Dashboard Developement</span>
         </div>
       </div>
 
@@ -652,7 +693,7 @@
         </div>
         <div class="skill-pills">
           <span class="pill pill-purple">MySQL</span>
-          <span class="pill pill-purple">PostgreSQL</span>
+          <span class="pill pill-purple">SQL</span>
           <span class="pill pill-purple">SQL Queries</span>
           <span class="pill pill-purple">JDBC</span>
           <span class="pill pill-purple">ETL</span>
@@ -670,7 +711,33 @@
           <span class="pill pill-green">Power Query</span>
           <span class="pill pill-green">DAX</span>
           <span class="pill pill-green">Matplotlib</span>
-          <span class="pill pill-green">Seaborn</span>
+          <span class="pill pill-green">Excel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="cert-wrapper">
+    <div class="section-label">Certifications</div>
+    <h2 class="section-title">Professional learning & validation</h2>
+
+    <div class="cert-list">
+      <div class="cert-item">
+        <div class="cert-title">Deloitte Data Analytics Job Simulation</div>
+        <div class="cert-org">Deloitte Australia · Forage</div>
+        <div class="cert-desc">
+          Completed a simulated analytics experience focused on interpreting business data, solving analytical problems, and presenting insights for decision-making.
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-title">Data Visualisation Virtual Experience</div>
+        <div class="cert-org">Tata Insights &amp; Quants · Forage</div>
+        <div class="cert-desc">
+          Strengthened data storytelling and dashboard communication using business datasets to create clear, impactful visual insights for stakeholders.
         </div>
       </div>
     </div>
@@ -684,73 +751,41 @@
     <h2 class="section-title">Things I've built 🚀</h2>
     <div class="projects-grid">
 
-        <div class="project-card">
-        <div class="project-top">
-          <span class="project-emoji">🌐</span>
-          <span class="project-badge badge-purple">Web Dev</span>
-        </div>
-        <div class="project-title">Responsive Portfolio Website</div>
-        <div class="project-desc">
-          Personal portfolio with modern CSS Grid, responsive layouts, semantic HTML
-          and REST API testing with Postman.
-        </div>
-        <div class="project-tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Postman</span>
-        </div>
-        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
-          View on GitHub →
-        </a>
-      </div>
-
       <div class="project-card">
         <div class="project-top">
           <span class="project-emoji">📈</span>
           <span class="project-badge badge-green">BI</span>
         </div>
-        <div class="project-title">Power BI Dashboard</div>
+        <div class="project-title">Financial Analysis Dashboard</div>
         <div class="project-desc">
-          Detailed business dashboard built in Power BI using Power Query for ETL,
-          DAX measures for KPI calculations, and interactive visuals for executive reporting.
+          Built an interactive Power BI dashboard tracking 5+ enterprise KPIs including Sales Revenue, Profit Margin, and Cost of Goods Sold across multiple business units. Automated data extraction with Power Query to reduce data prep effort by approximately 60%.
         </div>
         <div class="project-tags">
           <span class="tag">Power BI</span>
           <span class="tag">DAX</span>
+          <span class="tag">MS Excel</span>
           <span class="tag">Power Query</span>
-          <span class="tag">KPIs</span>
         </div>
-        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
-          View on GitHub →
-        </a>
-        <a href="mailto:ketanjadhav29032004@gmail.com?subject=Request%20PBIX%20Dashboard&body=Hi%20Ketan,%0A%0AI%20would%20like%20to%20request%20the%20PBIX%20file%20for%20the%20Power%20BI%20Dashboard.%20Please%20share%20it.%0A%0AThanks," class="project-link">
-          Request PBIX
-        </a>
-        <div style="color: var(--muted); font-size: 0.82rem; font-weight: 600; margin-top: 12px;">
-          PBIX dashboard available on request — GitHub hosts supporting files only.
+        <div class="project-desc" style="margin-top: 10px; margin-bottom: 0;">
+          • Authored 15+ DAX measures for dynamic calculations including YoY growth, running totals, and variance analysis to support monitoring and reporting accuracy.
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-top">
-          <span class="project-emoji">📊</span>
-          <span class="project-badge badge-green">Analytics</span>
+          <span class="project-emoji">🧹</span>
+          <span class="project-badge badge-purple">Excel</span>
         </div>
-        <div class="project-title">Data Analytics Projects (ExcelR)</div>
+        <div class="project-title">Excel Data Cleaning &amp; Deduplication</div>
         <div class="project-desc">
-          Hands-on analytics projects from my 5-month internship — data cleaning,
-          exploratory data analysis and SQL-based insights on real datasets.
+          Cleaned and standardized a 10,000+ row raw dataset by removing duplicates, handling null values, and restructuring the schema. Built 8+ dynamic Pivot Tables with slicers to segment and validate data by region, category, and time period.
         </div>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Excel</span>
-          <span class="tag">EDA</span>
+          <span class="tag">MS Excel</span>
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">VLOOKUP</span>
+          <span class="tag">XLOOKUP</span>
         </div>
-        <a href="https://github.com/KetanJadhav2004" target="_blank" rel="noopener noreferrer" class="project-link">
-          View on GitHub →
-        </a>
       </div>
 
     </div>
@@ -765,17 +800,17 @@
     <div class="exp-card">
       <div class="exp-top">
         <div>
-          <div class="exp-role">Data Analytics Intern</div>
+          <div class="exp-role">Data Analyst / Business Analyst — Internship</div>
           <div class="exp-company">ExcelR Solutions · Pune, Maharashtra</div>
         </div>
-        <div class="exp-date">Feb 2026 – Jun 2026</div>
+        <div class="exp-date">Mar 2026 – Aug 2026</div>
       </div>
       <ul class="exp-list">
-        <li>Worked with real-world datasets to perform data cleaning and exploratory data analysis.</li>
-        <li>Wrote and optimized SQL queries for data extraction and transformation.</li>
-        <li>Used Python for data processing and generating analytical reports.</li>
-        <li>Gained hands-on experience in analytics workflows and data-driven decision making.</li>
-        <li>Collaborated with team on structured analytics projects with defined deliverables.</li>
+        <li>Data quality &amp; accuracy: Analyzed business datasets using SQL and Excel, checking for accuracy, inconsistencies, and duplicate or exception records to support reliable cross-functional decision-making.</li>
+        <li>Governance-style reporting: Designed and maintained Power BI dashboards to track key business KPIs and monitor data quality trends, enabling stakeholders to review performance and flag anomalies in real time.</li>
+        <li>Process automation: Automated recurring data extraction, transformation, and reporting workflows using Power Query and Excel, reducing manual reporting effort and exception-handling time.</li>
+        <li>Stakeholder liaison: Partnered with cross-functional stakeholders to gather requirements, clarify business rules, and translate data issues into structured, data-driven solutions.</li>
+        <li>Documentation: Prepared clear, well-structured reports, process notes, and presentations summarizing findings and recommendations for management review.</li>
       </ul>
     </div>
   </div>
@@ -808,7 +843,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Ketan Sudhakar Jadhav 💙</p>
+  <p>© 2026 Ketan Sudhakar Jadhav</p>
   <p>Built with HTML · CSS · JavaScript</p>
 </footer>
 
